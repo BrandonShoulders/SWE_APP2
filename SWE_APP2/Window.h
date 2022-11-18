@@ -1,9 +1,6 @@
 #pragma once
 #include "wx/wx.h"
 
-
-
-
 class Window: public wxFrame
 {
 	wxTextCtrl* textbox = nullptr;
@@ -39,9 +36,8 @@ public:
 	  ~Window();
 	  void onBtnClicked(wxCommandEvent& e);
 	  void onExit(wxCommandEvent& e);
-	  void delfuntion();
-	  void clearfuntion();
-	  wxTextCtrl* textbox = nullptr;
+	  std::string delfunction(std::string str);
+	  void clearfunction();
 	  wxDECLARE_EVENT_TABLE();
 	 
 };

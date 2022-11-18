@@ -30,9 +30,7 @@ EVT_BUTTON(23, Window::onBtnClicked)
 wxEND_EVENT_TABLE();
 
 
-
-
-
+CalculatorProcessor* processer;
 
 //Constructor for cpp file.
 //The wxFrame takes in 5 parameters( Parent object ,ID tag , Title , where to create window(starting point from upper left screen, window width/height)
@@ -40,7 +38,7 @@ Window::Window() : wxFrame(nullptr, wxID_ANY, "Brandon's Calculator App", wxPoin
 
 
 
-	 textbox = new wxTextCtrl(this, 23, " ", wxPoint(8, 8), wxSize(300, 75));
+	textbox = new wxTextCtrl(this, 23, " ", wxPoint(8, 8), wxSize(300, 75));
 	 num1 = ButtonFactory::createNum1Btn(this);
 	 num2 = ButtonFactory::createNum2Btn(this);
 	 num3 = ButtonFactory::createNum3Btn(this);
@@ -69,87 +67,84 @@ Window::Window() : wxFrame(nullptr, wxID_ANY, "Brandon's Calculator App", wxPoin
 
 
 Window::~Window() {
-
+	delete textbox;
 }
-void onBtnClick(wxCommandEvent& e) {
+void Window::onBtnClicked(wxCommandEvent& e) {
 
 	int id = e.GetId();
+	std::string token = textbox->GetValue().ToStdString();
 
+	
 	switch (id) {
 	case 1:
-
+		textbox->AppendText(num1->GetLabel());
 	    break;
 	case 2:
-
+		textbox->AppendText(num2->GetLabel());
 		break;
 	case 3:
-
+		textbox->AppendText(num3->GetLabel());
 		break;
 	case 4:
-
+		textbox->AppendText(num4->GetLabel());
 		break;
 	case 5:
-
+		textbox->AppendText(num5->GetLabel());
 		break;
 	case 6:
-
+		textbox->AppendText(num6->GetLabel());
 		break;
 	case 7:
-
+		textbox->AppendText(num7->GetLabel());
 		break;
 	case 8:
-
+		textbox->AppendText(num8->GetLabel());
 		break;
 	case 9:
-
+		textbox->AppendText(num9->GetLabel());
 		break;
 	case 10:
-
+		textbox->AppendText(num0->GetLabel());
 		break;
 	case 11:
-
+		textbox->AppendText(addBtn->GetLabel());
 		break;
 	case 12:
-
+		textbox->AppendText(subtractBtn->GetLabel());
 		break;
 	case 13:
-
+		textbox->AppendText(multiplyBtn->GetLabel());
 		break;
 	case 14:
-
+		textbox->AppendText(divideBtn->GetLabel());
 		break;
 	case 15:
-
+		textbox->AppendText(moduloBtn->GetLabel());
 		break;
 	case 16:
-
+		textbox->AppendText(sinBtn->GetLabel());
 		break;
 	case 17:
-
+		textbox->AppendText(cosBtn->GetLabel());
 		break;
-	case 18:
-
+	case 18:	 
 		break;
 	case 19:
-
+		clearfunction();
 		break;
 	case 20:
-
+		delfunction(token);		
 		break;
 	case 21:
-
+		processer->evaluate(token);
 		break;
 	case 22:
-
+		textbox->AppendText(negateBtn->GetLabel());
 		break;
-	case 23:
-
+	default: 
+		textbox->AppendText(textbox->GetLabel());
 		break;
 	}
-
-
-
-
 
 
 }
@@ -158,11 +153,18 @@ void Window::onExit(wxCommandEvent& e) {
 	this->Close();
 }
 
-void Window::delfuntion() {
+std::string Window::delfunction(std::string str) {
 
+	std::string newstring;
+	if (!str.empty())
+	{
+		str.pop_back();
+		str = newstring;
+	}
+	return newstring;
 }
 
-void Window::clearfuntion() 
+void Window::clearfunction() 
 {
 	if (!textbox->IsEmpty()) {
 		textbox->Clear();

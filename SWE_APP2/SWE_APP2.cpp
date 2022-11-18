@@ -4,7 +4,8 @@
 
 wxIMPLEMENT_APP(App);
 
-bool App::OnInit() {
+bool App::OnInit()
+{
 
 	window = new Window();
 

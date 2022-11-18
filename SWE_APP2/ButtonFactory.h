@@ -51,7 +51,6 @@ public:
 	static wxButton* createSinBtn(wxWindow* Parent);
 	static wxButton* createCosBtn(wxWindow* Parent);
 	static wxButton* createTanBtn(wxWindow* Parent);
-	static wxButton* createNumBtn(wxWindow* Parent);
 	static wxButton* createClearBtn(wxWindow* Parent);
 	static wxButton* creaeteDelBtn(wxWindow* Parent);
 	static wxButton* createEqualsBtn(wxWindow* Parent);
