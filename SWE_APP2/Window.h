@@ -6,9 +6,10 @@
 
 class Window: public wxFrame
 {
+	wxTextCtrl* textbox = nullptr;
 
 private:
-	wxTextCtrl* textbox = nullptr;
+
 	wxButton* num1 = nullptr;
 	wxButton* num2 = nullptr;
 	wxButton* num3 = nullptr;
@@ -36,7 +37,12 @@ public:
 
 	  Window();
 	  ~Window();
-
-
+	  void onBtnClicked(wxCommandEvent& e);
+	  void onExit(wxCommandEvent& e);
+	  void delfuntion();
+	  void clearfuntion();
+	  wxTextCtrl* textbox = nullptr;
+	  wxDECLARE_EVENT_TABLE();
+	 
 };
 
