@@ -20,8 +20,6 @@
     </ClCompile>
     <ClCompile Include="Window.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ButtonFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,7 +30,6 @@
     <ClInclude Include="SWE_App2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ButtonFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
