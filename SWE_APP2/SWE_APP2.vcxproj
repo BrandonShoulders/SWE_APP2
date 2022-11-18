@@ -131,12 +131,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CalculatorProcessor.cpp" />
     <ClCompile Include="SWE_APP2.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CalculatorProcessor.h" />
     <ClInclude Include="SWE_App2.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
